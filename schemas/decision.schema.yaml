@@ -1,0 +1,38 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://metaai.dev/schemas/decision.schema.yaml"
+title: Decision Ledger Entry
+description: >-
+  A consequential decision recorded with rationale, confidence and outcome,
+  so predictions can be calibrated against reality.
+type: object
+required: [title, rationale, confidence, status]
+additionalProperties: false
+properties:
+  title: {type: string}
+  rationale:
+    type: string
+    description: The reasoning at decision time (stored, not reconstructed later).
+  confidence:
+    type: number
+    minimum: 0
+    maximum: 1
+  decided_by:
+    type: string
+    description: "human, or the organ that proposed it."
+  status:
+    type: string
+    enum: [pending, approved, rejected, reversed]
+  created_at: {type: string, format: date-time}
+  decided_at: {type: string, format: date-time}
+  outcome:
+    type: string
+    enum: ["", won, lost, wip]
+    default: ""
+    description: What actually happened (filled in when known).
+  outcome_value:
+    type: number
+    description: Measured result, when quantifiable.
+  wont_do:
+    type: boolean
+    default: false
+    description: Human rejected this permanently; the re-examiner must not resurface it.

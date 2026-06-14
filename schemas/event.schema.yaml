@@ -1,0 +1,25 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://metaai.dev/schemas/event.schema.yaml"
+title: Event
+description: A message on the organism's event bus. Elements react to events, not commands.
+type: object
+required: [type, source, ts]
+additionalProperties: false
+properties:
+  type:
+    type: string
+    description: "Dotted event type, e.g. lead.found, risk.detected, proposal.generated."
+    pattern: "^[a-z0-9_]+\\.[a-z0-9_.]+$"
+  payload:
+    type: object
+    description: Event-specific data.
+  source:
+    type: string
+    description: Name of the emitting element.
+  ts:
+    type: string
+    format: date-time
+    description: ISO-8601 emission timestamp.
+  trace_id:
+    type: string
+    description: Causal thread id, to follow a chain of reactions.

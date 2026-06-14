@@ -1,0 +1,44 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://metaai.dev/schemas/harness_manifest.schema.yaml"
+title: Harness Manifest
+description: >-
+  Declarative contract that turns a system/agent into a governed organism
+  element: what it can do, needs, emits, and must never do.
+type: object
+required: [name, role, autonomy]
+additionalProperties: false
+properties:
+  name:
+    type: string
+    description: Unique element name (snake_case).
+  role:
+    type: string
+    enum: [scout, judge, builder, operator, treasurer, immune, historian, diplomat]
+    description: The element's role in the organism.
+  i_can:
+    type: array
+    items: {type: string}
+    description: Capabilities the element is allowed to attempt.
+  i_need:
+    type: array
+    items: {type: string}
+    description: Inputs/resources the element requires to function.
+  i_emit:
+    type: array
+    items: {type: string}
+    description: Event types the element publishes to the bus.
+  i_must_not:
+    type: array
+    items: {type: string}
+    description: Hard limits, enforced by the policy engine.
+  autonomy:
+    type: string
+    enum: [observe, summarize, recommend, prepare, execute_reversible, execute_irreversible, self_modify]
+    description: Highest autonomy level this element may reach (see human-gate).
+  health_check:
+    type: string
+    description: Liveness endpoint or marker.
+  rollback:
+    type: string
+    enum: [supported, partial, none]
+    default: none

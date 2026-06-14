@@ -1,0 +1,22 @@
+# Example harness manifest — a "Seller Command Center" operator element.
+# Validates against ../schemas/harness_manifest.schema.yaml
+name: seller_command_center
+role: operator
+i_can:
+  - analyze_reviews
+  - summarize_sales
+  - detect_margin_risk
+  - draft_offer
+i_need:
+  - marketplace_reports
+  - pricing_rules
+i_emit:
+  - insight.generated
+  - risk.detected
+  - action.proposed
+i_must_not:
+  - spend_ad_budget
+  - message_customer_without_approval
+autonomy: recommend          # may propose & draft, never act irreversibly alone
+health_check: /healthz
+rollback: supported

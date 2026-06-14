@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this work or build on these concepts, please cite it."
+title: "METAai: Digital Organism Architecture & Organism Harness Protocol"
+abstract: >-
+  An open protocol and reference architecture for governing autonomous AI
+  systems as digital organisms: harness contracts, a shared meta-field,
+  a decision ledger with a human gate, a meta-constitution, and reputation /
+  evolutionary selection for agents and organs.
+type: software
+authors:
+  - family-names: "Bibilov"
+    given-names: "Georgiy"
+    alias: "bibilovgo-bgo"
+    website: "https://github.com/bibilovgo-bgo"
+version: "0.1.0"
+date-released: "2026-06-14"
+license: "Apache-2.0"
+keywords:
+  - "ai-agents"
+  - "multi-agent-systems"
+  - "ai-governance"
+  - "digital-organism"
+  - "harness-protocol"
+  - "decision-ledger"
+  - "human-in-the-loop"
+  - "agent-operating-system"

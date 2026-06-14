@@ -1,0 +1,22 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://metaai.dev/schemas/constitution.schema.yaml"
+title: Meta-Constitution
+description: The rules an organism can never override. Enforced by the policy engine.
+type: object
+required: [prime_directives, forbidden, autonomy_defaults]
+additionalProperties: false
+properties:
+  prime_directives:
+    type: array
+    items: {type: string}
+    description: Highest-priority goals, in order.
+  forbidden:
+    type: array
+    items: {type: string}
+    description: Actions that must never happen without explicit human authority.
+  autonomy_defaults:
+    type: object
+    description: Default human-gate level per sensitive action class.
+    additionalProperties:
+      type: string
+      enum: [auto, limited_auto, human_confirm, human_confirm_plus_tests]
