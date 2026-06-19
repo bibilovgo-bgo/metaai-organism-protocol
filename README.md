@@ -6,7 +6,7 @@
 > usefulness.
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-&nbsp;Status: **v0.1.0 — public preview** · Author: **Georgiy Bibilov**
+&nbsp;Status: **v0.1.0 — public preview** · Author: **[Georgiy Bibilov](https://bibilovgo.com)**
 
 ---
 
@@ -56,6 +56,15 @@ This repo is **not** the live, commercial METAai. The production organism — it
 real agents, prompts, business strategy, revenue logic, integrations and
 infrastructure — is private and stays private. Here you get the **governed
 architecture and protocol**, not the brain.
+
+## Who built this
+
+I'm **Georgiy Bibilov**. I build AI systems that run themselves — METAai
+(91 agents, ~114k LOC, solo) is the largest, and this protocol is its open core.
+
+If you want AI automation built for your business — bots, pipelines, autonomous
+agents — that's what I do for a living:
+**[bibilovgo.com](https://bibilovgo.com)** · Telegram **[@bibilovgo](https://t.me/bibilovgo)**
 
 ## Authorship
 
